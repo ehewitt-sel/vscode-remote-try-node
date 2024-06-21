@@ -1,0 +1,18 @@
+
+def main() {
+    pen(up)
+    move(2,5+3)
+    pen(down)
+}
+
+def another(x) {
+    move(x*2,0)
+}
+
+main()
+another(4)
+main()
+
+
+
+
