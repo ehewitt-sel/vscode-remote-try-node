@@ -1,0 +1,2 @@
+IB := 5
+//={"$type":"Model","assignments":[{"$type":"Signal","name":"IB","value":{"$type":"Lit","val":5}}]}

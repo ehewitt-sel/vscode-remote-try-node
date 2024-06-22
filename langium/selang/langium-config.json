@@ -1,0 +1,15 @@
+{
+    "projectName": "SelLanguage",
+    "languages": [{
+        "id": "sel-language",
+        "grammar": "src/language/sel-language.langium",
+        "fileExtensions": [".sel"],
+        "textMate": {
+            "out": "syntaxes/sel-language.tmLanguage.json"
+        },
+        "monarch": {
+            "out": "src/syntaxes/sel-language.monarch.ts"
+        }
+    }],
+    "out": "src/language/generated"
+}
