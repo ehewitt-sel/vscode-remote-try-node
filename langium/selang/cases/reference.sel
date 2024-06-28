@@ -1,0 +1,4 @@
+IB := 5
+IA := IB
+
+//={"$type":"Model","assignments":[{"$type":"Signal","name":"IB","value":{"$type":"Lit","val":5}},{"$type":"Signal","name":"IA","value":{"$type":"SignalRef","val":{"$ref":"#/assignments@0"}}}]}

@@ -1,0 +1,4 @@
+A := 2 * 3 + 7
+B := 7 + 2 * 3
+
+//={"$type":"Model","assignments":[{"$type":"Signal","name":"A","value":{"$type":"BinExpr","e1":{"$type":"BinExpr","e1":{"$type":"Lit","val":2},"op":"*","e2":{"$type":"Lit","val":3}},"op":"+","e2":{"$type":"Lit","val":7}}},{"$type":"Signal","name":"B","value":{"$type":"BinExpr","e1":{"$type":"Lit","val":7},"op":"+","e2":{"$type":"BinExpr","e1":{"$type":"Lit","val":2},"op":"*","e2":{"$type":"Lit","val":3}}}}]}

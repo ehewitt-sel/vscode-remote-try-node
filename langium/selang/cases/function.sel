@@ -1,0 +1,3 @@
+A[t] := SIN(t)
+
+//={"$type":"Model","assignments":[{"$type":"Signal","name":"A","ind":"t","value":{"$type":"FuncInvoke","func":"SIN","expr":{"$type":"Index","ind":"t"}}}]}

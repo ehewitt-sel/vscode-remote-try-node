@@ -3,21 +3,32 @@ grammar SelLanguage
 entry Model: (assignments+=Assignment)* (expected=Expected)?;
 
 Assignment:
-    Signal ('[' ind=Ind ']')? ':=' value=Expr;
+    Signal ('[' ind=IND ']')? ':=' value=Expr;
 
 Signal: name=ID;
 
-Expr: Ref | Lit;
+Expr: Add;
+Add infers Expr:
+    Mult ({infer BinExpr.e1=current} op=('+'|'-') e2=Mult)*;
+Mult infers Expr:
+    PrimExpr ({infer BinExpr.e1=current} op=('*'|'/') e2=PrimExpr)*;
+PrimExpr: Ref | Lit;
 
-Ref: Ind | SignalRef;
+Ref: Index | SignalRef | FuncInvoke;
 
-SignalRef: (val=[Signal:ID]) '[' expr=Expr ']';
+Index: ind=IND;
+
+SignalRef: (val=[Signal:ID]) ('[' expr=Expr ']')?;
+
+FuncInvoke: (func=FUNC) '(' expr=Expr ')';
 
 Lit: val=INT;
 
 Expected: json=EXP;
 
-terminal Ind: /[nct]/;
+terminal FUNC: /SIN|COS/;
+
+terminal IND: /[nct]/;
 terminal ID: /[_a-zA-Z][\w_]*/;
 terminal INT returns number: /[0-9]+/;
 
